@@ -14,6 +14,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
+
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -475,7 +477,7 @@
     </div>
     <!-- page Content -->
     <div class=" w-full flex items-center justify-center">
-        <div class="max-w-screen-xl items-center justify-center my-8 ">
+        <div class="max-w-screen-xl grid gap-8 items-center justify-center my-8 ">
             <!-- Partners Section -->
             <section class="flex items-center justify-center ">
                 <div class="grid grid-cols-5 gap-2">
@@ -563,16 +565,13 @@
             <!-- Services Section -->
             <section class="w-full flex items-center justify-center flex-col sm:flex-row gap-8 mb-4 px-8">
                 <!-- Cards -->
-                <div class="grid gap-4 grid-cols-3 p-4">
-
+                <div class="grid gap-8 grid-cols-3 p-4">
                     <style>
                         .hovered {
                             transform: scale(1.1);
                             box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
-
                         }
                     </style>
-
                     <!-- Card 1 -->
                     <div
                         class="card text-center items-center justify-center max-w-xs p-6 border border-gray-200 rounded-lg transition-transform transform cursor-default">
@@ -594,7 +593,6 @@
                             Browse through our wide range of available properties to find your dream home.
                         </p>
                     </div>
-
                     <!-- Card 2 (Hover by Default) -->
                     <div
                         class="card hovered text-center items-center justify-center max-w-xs p-6 border border-gray-200 rounded-lg transition-transform transform  cursor-default">
@@ -617,7 +615,6 @@
                             by default.
                         </p>
                     </div>
-
                     <!-- Card 3 -->
                     <div
                         class="card text-center items-center justify-center max-w-xs p-6 border border-gray-200 rounded-lg transition-transform transform cursor-default">
@@ -641,7 +638,6 @@
                         </p>
                     </div>
                 </div>
-
                 <script>
                     const cards = document.querySelectorAll('.card');
                     const card2 = document.querySelector('.card.hovered');
@@ -661,6 +657,7 @@
                         card.addEventListener('mouseout', () => {
                             // Remove hovered class from the current card
                             card.classList.remove('hovered');
+                            // add hovered class from the current card2
                             card2.classList.add('hovered');
                         });
                     });
@@ -670,7 +667,638 @@
             <section></section>
             <!-- Best Reviews Section -->
             <section>
+                <div x-data="cardSlider()" x-init="init()" class="p-4 grid gap-6 w-full">
+                    <div class="w-full flex justify-between">
+                        <h1 class="text-4xl font-bold" style="letter-spacing: 2px">Best Reviews.</h1>
+                        <div class="icons grid grid-cols-2 gap-4 items-center">
+                            <button @click="prevCard" class="h-7 w-7">
+                                <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20ZM12 11H16V13H12V16L8 12L12 8V11Z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <button @click="nextCard" class="h-7 w-7">
+                                <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 11V8L16 12L12 16V13H8V11H12ZM12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20Z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full flex items-center justify-center">
+                        <div class="max-w-screen-xl relative">
+                            <div class="card-slider flex">
+                                <div class="cards-container flex gap-8 transition-transform duration-500 ease-in-out"
+                                    x-ref="cardsContainer">
+                                    <!-- Your card elements here -->
+                                    <div class="reviews flex items-center">
+                                        <div class="flex-shrink-0 bg-white border border-gray-50 rounded-lg shadow-lg"
+                                            style="width: 506px;">
+                                            <div class="p-8 grid gap-5 items-center justify-between items-start"
+                                                style="padding: 30px 28px;">
+                                                <div class="w-full flex  items-center justify-between">
+                                                    <div class=" flex flex-wrap items-center">
+                                                        <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
+                                                            src="{{ asset('persen.png') }}">
+                                                        <div>
+                                                            <h2 class="mr-2 text-lg font-medium text-gray-700 ">
+                                                                Hannah Nelson
+                                                            </h2>
+                                                            <p class="text-sm font-medium text-gray-400 ">
+                                                                Anaheim, CA, USA
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="flex w-20 h-20 rotate-180 opacity-10"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                                                    </svg>
 
+                                                </div>
+                                                <p class="flex text-sm text-gray-600">
+                                                    “ This product is exactly what I was needed. Awesome construction
+                                                    and
+                                                    incredible
+                                                    comfort
+                                                    while using. ”
+                                                </p>
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <ul class="flex mb-1">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-half"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="text-xs font-thin text-gray-400">
+                                                                <p>4.5</p>
+                                                            </li>
+                                                        </ul>
+                                                        <p class="text-xs font-thin text-gray-400 dark:text-gray-400">
+                                                            2h ago
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews flex items-center">
+                                        <div class="flex-shrink-0 bg-white border border-gray-50 rounded-lg shadow-lg"
+                                            style="width: 506px;">
+                                            <div class="p-8 grid gap-5 items-center justify-between items-start"
+                                                style="padding: 30px 28px;">
+                                                <div class="w-full flex  items-center justify-between">
+                                                    <div class=" flex flex-wrap items-center">
+                                                        <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
+                                                            src="{{ asset('persen.png') }}">
+                                                        <div>
+                                                            <h2 class="mr-2 text-lg font-medium text-gray-700 ">
+                                                                Hannah Nelson
+                                                            </h2>
+                                                            <p class="text-sm font-medium text-gray-400 ">
+                                                                Anaheim, CA, USA
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="flex w-20 h-20 rotate-180 opacity-10"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                                                    </svg>
+
+                                                </div>
+                                                <p class="flex text-sm text-gray-600">
+                                                    “ This product is exactly what I was needed. Awesome construction
+                                                    and
+                                                    incredible
+                                                    comfort
+                                                    while using. ”
+                                                </p>
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <ul class="flex mb-1">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-half"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="text-xs font-thin text-gray-400">
+                                                                <p>4.5</p>
+                                                            </li>
+                                                        </ul>
+                                                        <p class="text-xs font-thin text-gray-400 dark:text-gray-400">
+                                                            2h ago
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews flex items-center">
+                                        <div class="flex-shrink-0 bg-white border border-gray-50 rounded-lg shadow-lg"
+                                            style="width: 506px;">
+                                            <div class="p-8 grid gap-5 items-center justify-between items-start"
+                                                style="padding: 30px 28px;">
+                                                <div class="w-full flex  items-center justify-between">
+                                                    <div class=" flex flex-wrap items-center">
+                                                        <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
+                                                            src="{{ asset('persen.png') }}">
+                                                        <div>
+                                                            <h2 class="mr-2 text-lg font-medium text-gray-700 ">
+                                                                Hannah Nelson
+                                                            </h2>
+                                                            <p class="text-sm font-medium text-gray-400 ">
+                                                                Anaheim, CA, USA
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="flex w-20 h-20 rotate-180 opacity-10"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                                                    </svg>
+
+                                                </div>
+                                                <p class="flex text-sm text-gray-600">
+                                                    “ This product is exactly what I was needed. Awesome construction
+                                                    and
+                                                    incredible
+                                                    comfort
+                                                    while using. ”
+                                                </p>
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <ul class="flex mb-1">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-half"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="text-xs font-thin text-gray-400">
+                                                                <p>4.5</p>
+                                                            </li>
+                                                        </ul>
+                                                        <p class="text-xs font-thin text-gray-400 dark:text-gray-400">
+                                                            2h ago
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews flex items-center">
+                                        <div class="flex-shrink-0 bg-white border border-gray-50 rounded-lg shadow-lg"
+                                            style="width: 506px;">
+                                            <div class="p-8 grid gap-5 items-center justify-between items-start"
+                                                style="padding: 30px 28px;">
+                                                <div class="w-full flex  items-center justify-between">
+                                                    <div class=" flex flex-wrap items-center">
+                                                        <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
+                                                            src="{{ asset('persen.png') }}">
+                                                        <div>
+                                                            <h2 class="mr-2 text-lg font-medium text-gray-700 ">
+                                                                Hannah Nelson
+                                                            </h2>
+                                                            <p class="text-sm font-medium text-gray-400 ">
+                                                                Anaheim, CA, USA
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="flex w-20 h-20 rotate-180 opacity-10"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                                                    </svg>
+
+                                                </div>
+                                                <p class="flex text-sm text-gray-600">
+                                                    “ This product is exactly what I was needed. Awesome construction
+                                                    and
+                                                    incredible
+                                                    comfort
+                                                    while using. ”
+                                                </p>
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <ul class="flex mb-1">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-half"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="text-xs font-thin text-gray-400">
+                                                                <p>4.5</p>
+                                                            </li>
+                                                        </ul>
+                                                        <p class="text-xs font-thin text-gray-400 dark:text-gray-400">
+                                                            2h ago
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reviews flex items-center">
+                                        <div class="flex-shrink-0 bg-white border border-gray-50 rounded-lg shadow-lg"
+                                            style="width: 506px;">
+                                            <div class="p-8 grid gap-5 items-center justify-between items-start"
+                                                style="padding: 30px 28px;">
+                                                <div class="w-full flex  items-center justify-between">
+                                                    <div class=" flex flex-wrap items-center">
+                                                        <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
+                                                            src="{{ asset('persen.png') }}">
+                                                        <div>
+                                                            <h2 class="mr-2 text-lg font-medium text-gray-700 ">
+                                                                Hannah Nelson
+                                                            </h2>
+                                                            <p class="text-sm font-medium text-gray-400 ">
+                                                                Anaheim, CA, USA
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                        class="flex w-20 h-20 rotate-180 opacity-10"
+                                                        viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z" />
+                                                    </svg>
+
+                                                </div>
+                                                <p class="flex text-sm text-gray-600">
+                                                    “ This product is exactly what I was needed. Awesome construction
+                                                    and
+                                                    incredible
+                                                    comfort
+                                                    while using. ”
+                                                </p>
+                                                <div class="flex items-center">
+                                                    <div>
+                                                        <ul class="flex mb-1">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-fill"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        width="16" height="16"
+                                                                        fill="currentColor"
+                                                                        class="w-4 mr-1 text-yellow-400 bi bi-star-half"
+                                                                        viewBox="0 0 16 16">
+                                                                        <path
+                                                                            d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z">
+                                                                        </path>
+                                                                    </svg>
+                                                                </a>
+                                                            </li>
+
+                                                            <li class="text-xs font-thin text-gray-400">
+                                                                <p>4.5</p>
+                                                            </li>
+                                                        </ul>
+                                                        <p class="text-xs font-thin text-gray-400 dark:text-gray-400">
+                                                            2h ago
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function cardSlider() {
+                        return {
+                            cardIndex: 0,
+                            numCards: 0,
+                            cardWidth: 0,
+
+                            init() {
+                                this.numCards = this.$refs.cardsContainer.children.length;
+                                this.cardWidth = this.$refs.cardsContainer.children[0].offsetWidth;
+                            },
+
+                            updateCardPosition() {
+                                const newPosition = -this.cardIndex * this.cardWidth;
+                                this.$refs.cardsContainer.style.transform = `translateX(${newPosition}px)`;
+                            },
+
+                            prevCard() {
+                                this.cardIndex = (this.cardIndex - 1 + this.numCards) % this.numCards;
+                                this.updateCardPosition();
+                            },
+
+                            nextCard() {
+                                this.cardIndex = (this.cardIndex + 1) % this.numCards;
+                                this.updateCardPosition();
+                            }
+                        };
+                    }
+                </script>
             </section>
             <!-- FAQ'S Section -->
             <section class="p-4 grid grid-cols-1 gap-6  lg:grid-cols-2">
@@ -697,7 +1325,8 @@
                                         class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
                                         data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
                                         aria-controls="accordion-flush-body-1">
-                                        <span class="text-gray-800 font-bold">What types of houses do you offer?</span>
+                                        <span class="text-gray-800 font-bold">What types of houses do you
+                                            offer?</span>
                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                             viewBox="0 0 10 6">
@@ -725,7 +1354,8 @@
                                         class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200"
                                         data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
                                         aria-controls="accordion-flush-body-2">
-                                        <span class="text-gray-800 font-bold">How do I schedule a house viewing?</span>
+                                        <span class="text-gray-800 font-bold">How do I schedule a house
+                                            viewing?</span>
                                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0"
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                             viewBox="0 0 10 6">
@@ -743,7 +1373,8 @@
                                                 viewing</a> page. You can choose a convenient date and time, and our
                                             team
                                             will get in touch with you to confirm the appointment.</p>
-                                        <p class="text-gray-500">If you have specific preferences or questions, you can
+                                        <p class="text-gray-500">If you have specific preferences or questions, you
+                                            can
                                             also reach out to our customer support at <a href="tel:123-456-7890"
                                                 class="text-blue-600 hover:underline">(123) 456-7890</a>.</p>
                                     </div>
@@ -808,7 +1439,8 @@
                                         <p class="text-gray-500">For more information about customization options and
                                             the
                                             process, please reach out to our <a href="/customization"
-                                                class="text-blue-600 hover:underline">customization department</a>.</p>
+                                                class="text-blue-600 hover:underline">customization department</a>.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -848,6 +1480,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js"></script>
 
 </body>
 

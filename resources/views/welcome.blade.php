@@ -701,7 +701,7 @@
                                                 <div class="w-full flex  items-center justify-between">
                                                     <div class=" flex flex-wrap items-center">
                                                         <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
-                                                            src="{{ asset('persen.png') }}">
+                                                            src="{{ asset('person.png') }}">
                                                         <div>
                                                             <h2 class="mr-2 text-lg font-medium text-gray-700 ">
                                                                 Hannah Nelson
@@ -815,7 +815,7 @@
                                                 <div class="w-full flex  items-center justify-between">
                                                     <div class=" flex flex-wrap items-center">
                                                         <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
-                                                            src="{{ asset('persen.png') }}">
+                                                            src="{{ asset('person.png') }}">
                                                         <div>
                                                             <h2 class="mr-2 text-lg font-medium text-gray-700 ">
                                                                 Hannah Nelson
@@ -929,7 +929,7 @@
                                                 <div class="w-full flex  items-center justify-between">
                                                     <div class=" flex flex-wrap items-center">
                                                         <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
-                                                            src="{{ asset('persen.png') }}">
+                                                            src="{{ asset('person.png') }}">
                                                         <div>
                                                             <h2 class="mr-2 text-lg font-medium text-gray-700 ">
                                                                 Hannah Nelson
@@ -1043,7 +1043,7 @@
                                                 <div class="w-full flex  items-center justify-between">
                                                     <div class=" flex flex-wrap items-center">
                                                         <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
-                                                            src="{{ asset('persen.png') }}">
+                                                            src="{{ asset('person.png') }}">
                                                         <div>
                                                             <h2 class="mr-2 text-lg font-medium text-gray-700 ">
                                                                 Hannah Nelson
@@ -1157,7 +1157,7 @@
                                                 <div class="w-full flex  items-center justify-between">
                                                     <div class=" flex flex-wrap items-center">
                                                         <img class="object-cover mr-2 rounded-full shadow w-14 h-14 "
-                                                            src="{{ asset('persen.png') }}">
+                                                            src="{{ asset('person.png') }}">
                                                         <div>
                                                             <h2 class="mr-2 text-lg font-medium text-gray-700 ">
                                                                 Hannah Nelson

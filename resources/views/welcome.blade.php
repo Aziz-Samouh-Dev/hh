@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>HouseLink</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -86,7 +86,7 @@
                         @if (Route::has('login'))
                             <a class="mr-1 " href="{{ route('login') }}">
                                 <button type="button"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 px-5 text-center"
+                                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 px-5 text-center"
                                     style="letter-spacing: 1px ">
                                     Get In
                                 </button>
@@ -213,31 +213,36 @@
     <!-- Hero Section -->
     <div class="w-full flex ml-auto relative">
         <!-- hero image and titel .. -->
-        <div class="w-11/12 bg-cover bg-center flex"
-            style=" background-image: url('img.png');   height: 600px; width: 100%;">
-            <div class="w-full max-w-screen-xl flex items-center  mx-auto p-4">
-                <div class=" flex flex-wrap p-4 ">
-                    <div class=" w-full my-4">
-                        <h1 class="text-6xl font-black text-white mb-2"
-                            style="letter-spacing: 1.2rem ; font-size:70px ; font-weight:900; ">
-                            Find Your <br />Perfect <br /> Match
-                        </h1>
-                        <p class="text-lg text-gray-300 " style="letter-spacing: 2px ">
-                            Ignite Your Imagination
-                        </p>
-                        <p class="text-lg text-gray-300 mb-8" style="letter-spacing: 2px ">
-                            HouseLink - Where Vision Meets Reality.
-                        </p>
-                        <button type="button"
-                            class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none rounded-lg border border-white hover:bg-blue-700 hover:text-white focus:z-10 focus:ring-2 "
-                            style="letter-spacing: 2px ">
-                            Get Started
-                        </button>
+        <div class="w-full bg-cover bg-center flex "
+            style="background-image: url('./images/hero3.jpg'); height: 600px; width: 100%;">
+            <div class="w-full flex items-center justify-center bg-gray-900/60">
+                <div class="max-w-screen-xl flex items-center justify-between ">
+                    <div class="flex flex-wrap p-4">
+                        <div class="w-full my-4">
+                            <h1 class="text-4xl md:text-6xl font-black text-white mb-2"
+                                style="lign-space:3px; ; letter-spacing: 1.2rem; font-size: 4rem; font-weight: 900;">
+                                Find Your <br />Perfect <br/> Match
+                            </h1>
+                            {{-- <p class="text-base md:text-lg text-gray-300" style="letter-spacing: 2px">
+                            </p> --}}
+                            <p class="text-base md:text-lg text-gray-300 mb-8" style="letter-spacing: 2px">
+                                Ignite Your Imagination <br>
+                                HouseLink - Where Vision Meets Reality.
+                            </p>
+                            <button type="button"
+                                class="py-2 px-4 md:py-2.5 md:px-5 text-xs md:text-sm font-medium text-white focus:outline-none rounded-lg border border-white hover:border-green-700 hover:bg-green-700 hover:text-white focus:z-10 focus:ring-2"
+                                style="letter-spacing: 2px">
+                                Get Started
+                            </button>
+                        </div>
                     </div>
-
+                    <div class="flex flex-wrap p-4 md:p-16 items-center justify-center md:justify-end">
+                        <img src="{{ asset('./images/mar.png') }}" alt="" class="max-w-full md:max-w-md">
+                    </div>
                 </div>
             </div>
         </div>
+
         <!-- Filter section -->
         <section class="absolute w-full  flex items-center justify-center px-4" style=" bottom: -8%">
             <div class=" py-6 px-8 border lg:flex rounded-lg shadow-lg hidden :max-w-screen-xl  mx-auto  backdrop-blur-md bg-white/30"
@@ -467,7 +472,7 @@
                 </div>
                 <!-- Filter Button -->
                 <button type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 px-5 text-center "
+                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 px-5 text-center "
                     style="letter-spacing: 1px ">
                     Search
                 </button>
@@ -573,7 +578,7 @@
                         }
 
                         .hovered .ico {
-                            color: rgb(71, 71, 71);
+                            color: rgba(9, 1, 58, 0.76);
                             background-color: white;
                             box-shadow: 0px 10px 20px rgba(44, 44, 44, 0.137);
                         }
@@ -784,7 +789,7 @@
                                     100.000 $
                                 </span>
                                 <a href="#"
-                                    class="text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    class="text-white bg-green-600 hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     View Details
                                 </a>
                             </div>
@@ -922,7 +927,7 @@
                                     100.000 $
                                 </span>
                                 <a href="#"
-                                    class="text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    class="text-white bg-green-600 hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     View Details
                                 </a>
                             </div>
@@ -1060,7 +1065,7 @@
                                     100.000 $
                                 </span>
                                 <a href="#"
-                                    class="text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    class="text-white bg-green-600 hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     View Details
                                 </a>
                             </div>
@@ -1198,7 +1203,7 @@
                                     100.000 $
                                 </span>
                                 <a href="#"
-                                    class="text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    class="text-white bg-green-600 hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     View Details
                                 </a>
                             </div>
@@ -1336,7 +1341,147 @@
                                     100.000 $
                                 </span>
                                 <a href="#"
-                                    class="text-white bg-gray-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    class="text-white bg-green-600 hover:bg-yellow-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                                    View Details
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="grid grid-cols-3 justify-between ">
+                                <div class="text-sm flex items-center justify-center border-r p-2 lg:px-0">
+                                    <i class="ri-hotel-bed-line"></i>
+                                    <p class="pl-2 font-medium">4 Bedrooms</p>
+                                </div>
+                                <div class="text-sm flex items-center justify-center border-r p-2 lg:px-0">
+                                    <i class="ri-map-2-line"></i>
+                                    <p class="pl-2 font-medium"> Casablanca </p>
+                                </div>
+                                <div class="text-sm flex items-center justify-center p-2 lg:px-0">
+                                    <i class="ri-map-pin-line"></i>
+                                    <p class="pl-2 font-medium"> City Center </p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="relative w-96 lg:w-80 xl:w-96 md:w-96 grid gap-2 bg-white border border-gray-200 rounded-2xl hover:shadow-xl p-2 transform hover:scale-105 transition-transform ease-in-out duration-300 overflow-hidden"
+                            data-carousel="slide">
+                            <!-- Badge container inside the card -->
+                            <div
+                                class="absolute -rotate-45 top-6 -left-12 z-50 bg-yellow-300 text-white font-bold text-sm tracking-widest">
+                                <h1 class="px-16 py-1 ">RENT</h1>
+                            </div>
+                            <!-- Carousel wrapper -->
+                            <div class="relative h-64 overflow-hidden rounded-lg">
+
+                                <!-- Heart icon -->
+                                <button type="button"
+                                    class="absolute text-gray-50 top-0 right-0 z-50 flex items-center justify-center p-2 cursor-pointer focus:outline-none"
+                                    id="heartIcon" onclick="toggleHeartColor()">
+                                    <span
+                                        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-800/10 hover:bg-gray-50/30 focus:ring-gray-800/70 focus:outline-none">
+                                        <i class="ri-heart-fill text-2xl "></i>
+                                        <span class="sr-only">Next</span>
+                                    </span>
+                                </button>
+
+                                <script>
+                                    function toggleHeartColor() {
+                                        const heartIcon = document.getElementById('heartIcon');
+                                        heartIcon.classList.toggle('text-red-400');
+                                    }
+                                </script>
+
+                                <!-- Item 1 -->
+                                <div class="hidden duration-700 ease-in-out h-64" data-carousel-item>
+                                    <img src="/images/1.jpg" class="absolute block h-64 object-cover" alt="">
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="hidden duration-700 ease-in-out h-64" data-carousel-item>
+                                    <img src="/images/2.jpg" class="absolute block h-64 object-cover"
+                                        alt="">
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="hidden duration-700 ease-in-out h-64" data-carousel-item>
+                                    <img src="/images/3.jpg" class="absolute block h-64 object-cover"
+                                        alt="">
+                                </div>
+                                <!-- Slider indicators -->
+                                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-2 left-1/2">
+                                    <button type="button" class="w-2 h-2 rounded-full transition-all duration-300 "
+                                        aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0">
+                                    </button>
+                                    <button type="button" class="w-2 h-2 rounded-full transition-all duration-300 "
+                                        aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1">
+                                    </button>
+                                    <button type="button" class="w-2 h-2 rounded-full transition-all duration-300 "
+                                        aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2">
+                                    </button>
+                                </div>
+                                <!-- Slider controls -->
+                                <div class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 group focus:outline-none"
+                                    data-carousel-prev>
+                                    <span
+                                        class="inline-flex items-center justify-center w-6 h-6 cursor-pointer rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-gray-800/70 group-focus:outline-none">
+                                        <svg class="w-3 h-3 text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                        </svg>
+                                        <span class="sr-only">Previous</span>
+                                    </span>
+                                </div>
+                                <div class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 group focus:outline-none"
+                                    data-carousel-next>
+                                    <span
+                                        class="inline-flex items-center justify-center w-6 h-6 cursor-pointer rounded-full bg-gray-800/30 group-hover:bg-gray-800/60 group-focus:ring-gray-800/70 group-focus:outline-none">
+                                        <svg class="w-3 h-3 text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                        </svg>
+                                        <span class="sr-only">Next</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <h5 class="text-lg font-semibold tracking-tight text-gray-900">
+                                Entire rental unit hosted by Carmen Y David
+                            </h5>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-gray-200" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <span
+                                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded ml-3">
+                                    4.5
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-bold text-gray-900">
+                                    100.000 $
+                                </span>
+                                <a href="#"
+                                    class="text-white bg-green-600 hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                     View Details
                                 </a>
                             </div>
@@ -2125,7 +2270,8 @@
                 </div>
             </section>
             <!-- Card Get Started -->
-            <section class="p-4">
+            <!-- Card Get Started -->
+            <section class="p-4 h-full h-auto">
                 <div class="my-8 flex w-full py-10 flex-col justify-center items-center flex-shrink-0 gap-8 text-white hover:shadow-2xl"
                     style="border-radius: 16px; background: linear-gradient(135deg, #003F89 0.02%, #052851 48.19%, #006632 100%);">
                     <div class="grid gap-3 text-center ">
@@ -2137,12 +2283,149 @@
                             released Purpose Design System.
                         </p>
                     </div>
-                    <button type="button"
+                    <button type="button" id="contactBtn"
                         class="py-2.5 px-5 text-sm font-medium text-white focus:outline-none rounded-lg border border-white hover:bg-blue-700 hover:text-white focus:z-10 focus:ring-2 "
                         style="letter-spacing: 2px;">
                         Get Started
                     </button>
                 </div>
+
+                <div id="contactForm" class="hidden z-[200]  fixed top-0 right-0 w-full h-screen overflow-auto"
+                    style="background-color: rgba(0, 0, 26, 0.877)">
+                    <div
+                        class="w-full h-screen absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <div class=" h-auto flex items-center justify-center p-8">
+                            <section class="relative w-full bg-gray-50 p-5 grid rounded-xl">
+                                <!--div1-->
+                                <h1 class="text-4xl font-bold mb-5 text-center" style="letter-spacing: 2px">Contact
+                                    us .
+                                </h1>
+
+                                <div class=" grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-2  gap-2 ">
+                                    <!--div2-->
+                                    <div
+                                        class="w-full items-center justify-center grid grid-cols-1 sm:grid-cols-2 gap-4 p-8 ">
+                                        <!--div1-->
+                                        <div
+                                            class="w-full grid items-center justify-center text-center gap-3 col-span-1">
+                                            <div
+                                                class="inline-block overflow-hidden text-xs text-white bg-blue-500 rounded-full w-44 h-44 sm:w-64 sm:h-64">
+                                                <img class="object-cover w-full h-full transition-all hover:scale-110"
+                                                    src="https://i.postimg.cc/bNyr5cJq/pexels-anastasia-shuraeva-5704720.jpg"
+                                                    alt="">
+                                            </div>
+                                            <h2 class="text-xl font-bold ">Khellali Marouan</h2>
+                                            <p class="text-sm text-blue-500 ">Developer</p>
+                                            <div class="flex gap-4 items-center justify-center">
+                                                <a class="inline-block text-gray-800  hover:text-pink-400  "
+                                                    href="#">
+                                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                                </a>
+                                                <a class="inline-block text-gray-800 hover:text-gray-400 "
+                                                    href="#">
+                                                    <i class="fa-brands fa-github text-xl"></i>
+                                                </a>
+                                                <a class="inline-block text-gray-800  hover:text-blue-400"
+                                                    href="#">
+                                                    <i class="fa-brands fa-linkedin text-xl"></i>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <!--div2-->
+                                        <div
+                                            class="w-full grid items-center justify-center text-center gap-3 col-span-1">
+                                            <div
+                                                class="inline-block overflow-hidden text-xs text-white bg-blue-500 rounded-full w-44 h-44 sm:w-64 sm:h-64">
+                                                <img class="object-cover w-full h-full transition-all hover:scale-110"
+                                                    src="https://i.postimg.cc/bNyr5cJq/pexels-anastasia-shuraeva-5704720.jpg"
+                                                    alt="">
+                                            </div>
+                                            <h2 class="text-xl font-bold ">Samouh Aziz</h2>
+                                            <p class="text-sm text-blue-500 ">Developer</p>
+                                            <div class="flex gap-4 items-center justify-center">
+                                                <a class="inline-block text-gray-800  hover:text-pink-400  "
+                                                    href="#">
+                                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                                </a>
+                                                <a class="inline-block text-gray-800 hover:text-gray-400 "
+                                                    href="#">
+                                                    <i class="fa-brands fa-github text-xl"></i>
+                                                </a>
+                                                <a class="inline-block text-gray-800  hover:text-blue-400"
+                                                    href="#">
+                                                    <i class="fa-brands fa-linkedin text-xl"></i>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="w-full grid grid-cols-1 gap-2">
+                                        <!-- component -->
+                                        <div class="flex items-center justify-center p-12">
+                                            <div class="mx-auto w-full max-w-[550px]">
+
+                                                <form action="https://formbold.com/s/FORM_ID" method="POST">
+                                                    <div class="mb-5">
+
+                                                        <input type="text" name="name" id="name"
+                                                            placeholder="Full Name"
+                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                    </div>
+                                                    <div class="mb-5">
+
+                                                        <input type="email" name="email" id="email"
+                                                            placeholder="example@domain.com"
+                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                    </div>
+                                                    <div class="mb-5">
+
+                                                        <input type="text" name="subject" id="subject"
+                                                            placeholder="Enter your subject"
+                                                            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+                                                    </div>
+                                                    <div class="mb-5">
+
+                                                        <textarea rows="4" name="message" id="message" placeholder="Type your message"
+                                                            class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+                                                    </div>
+                                                    <div>
+                                                        <button
+                                                            class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-base font-semibold text-white outline-none">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="closeFormBtn"
+                                    class="absolute top-3 right-3 text-red-500 hover:bg-gray-200 w-6 h-6 flex items-center justify-center  rounded-full">
+                                    <i class="fas fa-times "></i>
+                                </button>
+                            </section>
+                        </div>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            $(document).ready(function() {
+                                const contactBtn = $("#contactBtn");
+                                const contactForm = $("#contactForm");
+                                const closeFormBtn = $("#closeFormBtn");
+
+                                contactBtn.click(function() {
+                                    contactForm.removeClass("hidden");
+                                });
+
+                                closeFormBtn.click(function() {
+                                    contactForm.addClass("hidden");
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+
             </section>
         </div>
     </div>

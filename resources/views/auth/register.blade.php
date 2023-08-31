@@ -1,3 +1,5 @@
+@section('title' , 'Register')
+
 <x-guest-layout>
     <div class="max-w-md w-full space-y-8">
         <div class="text-center">

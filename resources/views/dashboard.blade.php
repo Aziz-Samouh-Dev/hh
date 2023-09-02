@@ -1,14 +1,13 @@
 <x-app-layout>
-
+ 
     <main class="h-full overflow-y-auto">
         <div class="container px-6 mx-auto grid">
             <h2 class="my-6 text-2xl font-semibold text-gray-700">
                 Dashboard
             </h2>
             <!-- CTA -->
-            <a class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
+            {{-- <a class="flex items-center justify-between p-4 mb-8 text-sm font-semibold text-purple-100 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple"
                 href="#">
-                {{-- href="https://github.com/estevanmaito/windmill-dashboard"> --}}
                 <div class="flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path
@@ -18,7 +17,7 @@
                     <span>Star this project on GitHub</span>
                 </div>
                 <span>View more &RightArrow;</span>
-            </a>
+            </a> --}}
             <!-- Cards -->
             <div class="grid gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
                 <!-- Card -->
@@ -91,6 +90,51 @@
                         <p class="text-lg font-semibold text-gray-700">
                             35
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <h2 class="my-6 text-2xl font-semibold text-gray-700">
+                Charts
+            </h2>
+            <div class="grid gap-6 mb-8 md:grid-cols-2">
+                <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs ">
+                    <h4 class="mb-4 font-semibold text-gray-800">
+                        Revenue
+                    </h4>
+                    <canvas id="pie"></canvas>
+                    <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 ">
+                        <!-- Chart legend -->
+                        <div class="flex items-center">
+                            <span class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
+                            <span>Shirts</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
+                            <span>Shoes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
+                            <span>Bags</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs ">
+                    <h4 class="mb-4 font-semibold text-gray-800 ">
+                        Traffic
+                    </h4>
+                    <canvas id="line"></canvas>
+                    <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 ">
+                        <!-- Chart legend -->
+                        <div class="flex items-center">
+                            <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
+                            <span>Organic</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
+                            <span>Paid</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -183,7 +227,8 @@
                                             <img class="object-cover w-full h-full rounded-full"
                                                 src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
                                                 alt="" loading="lazy" />
-                                            <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true">
+                                            <div class="absolute inset-0 rounded-full shadow-inner"
+                                                aria-hidden="true">
                                             </div>
                                         </div>
                                         <div>
@@ -485,51 +530,7 @@
                 </div>
             </div>
 
-            <!-- Charts -->
-            <h2 class="my-6 text-2xl font-semibold text-gray-700">
-                Charts
-            </h2>
-            <div class="grid gap-6 mb-8 md:grid-cols-2">
-                <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs ">
-                    <h4 class="mb-4 font-semibold text-gray-800">
-                        Revenue
-                    </h4>
-                    <canvas id="pie"></canvas>
-                    <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 ">
-                        <!-- Chart legend -->
-                        <div class="flex items-center">
-                            <span class="inline-block w-3 h-3 mr-1 bg-blue-500 rounded-full"></span>
-                            <span>Shirts</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
-                            <span>Shoes</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
-                            <span>Bags</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs ">
-                    <h4 class="mb-4 font-semibold text-gray-800 ">
-                        Traffic
-                    </h4>
-                    <canvas id="line"></canvas>
-                    <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 ">
-                        <!-- Chart legend -->
-                        <div class="flex items-center">
-                            <span class="inline-block w-3 h-3 mr-1 bg-teal-600 rounded-full"></span>
-                            <span>Organic</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
-                            <span>Paid</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </main>
-
 </x-app-layout>

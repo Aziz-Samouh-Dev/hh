@@ -93,61 +93,107 @@
                             </a>
                         @endif
                     @else
-                        <!-- Profil -->
+                        <ul class="flex items-center flex-shrink-2 space-x-6">
+                            <!-- Notifications menu -->
+                            <li class="relative">
+                                <button
+                                    class="relative text-white align-middle rounded-md focus:outline-none focus:shadow-outline-purple"
+                                    type="button" data-dropdown-toggle="NotificationDropdown">
+                                    <svg class="w-5 h-5 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z">
+                                        </path>
+                                    </svg>
+                                    <span aria-hidden="true"
+                                        class="absolute top-0 right-0 inline-block w-3 h-3 transform translate-x-1 -translate-y-1 bg-red-600 rounded-full "></span>
+                                </button>
+                                <ul id="NotificationDropdown"
+                                    class="hidden absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md">
+                                    <li class="flex">
+                                        <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="#">
+                                            <span>Messages</span>
+                                            <span
+                                                class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-600 bg-red-100 rounded-full">
+                                                13
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="flex">
+                                        <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="#">
+                                            <span>Sales</span>
+                                            <span
+                                                class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-600 bg-red-100 rounded-full">
+                                                2
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="flex">
+                                        <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="#">
+                                            <span>Alerts</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Profile menu -->
+                            <li class="relative ">
+                                <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
+                                    type="button" data-dropdown-toggle="profileDropdown">
+                                    <img class="object-cover w-8 h-8 rounded-full"
+                                        src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
+                                        alt="" />
+                                </button>
+                                <ul id="profileDropdown"
+                                    class="hidden absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md"
+                                    class="profile-menu">
+                                    <li class="flex">
+                                        <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="{{ url('profile') }}">
+                                            <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path
+                                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z">
+                                                </path>
+                                            </svg>
+                                            <span>Profile</span>
+                                        </a>
+                                    </li>
+                                    <li class="flex">
+                                        <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800"
+                                            href="{{ route('dashboard') }}">
+                                            <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path
+                                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                                                </path>
+                                            </svg>
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submit" href="{{ route('logout') }}"
+                                                class="flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800">
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
+                                                {{ __('Log Out') }}
+                                            </button>
+                                        </form>
+                                    </li>
 
-                        <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown"
-                            data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer"
-                            src="/docs/images/people/profile-picture-5.jpg" alt="User dropdown">
-
-                        <!-- Dropdown menu -->
-                        <div id="userDropdown"
-                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
-
-                            <ul class="py-2 text-sm text-gray-700 " aria-labelledby="avatarButton">
-                                <div
-                                    class="flex items-center p-3 -mt-2 text-sm text-gray-600 transition-colors duration-300 transform">
-                                    <div class="mx-1">
-                                        <h1 class="text-sm font-semibold text-gray-700 ">
-                                            {{ Auth::user()->name }}
-                                        </h1>
-                                        <p class="text-sm text-gray-500 ">{{ Auth::user()->email }}</p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <x-dropdown-link :href="url('/profile')">
-                                    {{ __('Profile') }}
-                                </x-dropdown-link>
-                                <x-dropdown-link :href="url('/')">
-                                    {{ __('Home') }}
-                                </x-dropdown-link>
-
-                                @auth
-                                    @if (Auth::user()->role === 'user')
-                                        {{-- <x-dropdown-link :href="route('#')">
-                                            {{ __('Orders') }}
-                                            </x-nav-link> --}}
-                                    @else
-                                        <x-dropdown-link :href="url('/dashboard')">
-
-                                            {{ __('Dashboard') }}
-                                        </x-dropdown-link>
-                                    @endif
-                                @endauth
-                            </ul>
-                            <div class="py-1">
-                                <!-- Authentication -->
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-
-                                    <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                        {{ __('Log Out') }}
-                                    </x-dropdown-link>
-                                </form>
-                            </div>
-                        </div>
-
+                                </ul>
+                            </li>
+                        </ul>
                     @endguest
 
                     <!-- drawer init and toggle -->
@@ -166,7 +212,8 @@
 
 
                 </div>
-                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
+                <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+                    id="navbar-sticky">
                     <ul
                         class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg lg:flex-row lg:space-x-8 lg:mt-0 lg:border-0 lg:bg-transparent ">
                         <li>
@@ -211,33 +258,33 @@
         </nav>
     </div>
     <!-- Hero Section -->
-    <div class="w-full flex ml-auto relative">
+    <div class="w-full flex ml-auto relative ">
         <!-- hero image and titel .. -->
         <div class="w-full bg-cover bg-center flex "
             style="background-image: url('./images/hero3.jpg'); height: 600px; width: 100%;">
             <div class="w-full flex items-center justify-center bg-gray-900/60">
-                <div class="max-w-screen-xl flex items-center justify-between ">
+                <div class="max-w-screen-xl flex items-center justify-between overflow-hidden">
                     <div class="flex flex-wrap p-4">
-                        <div class="w-full my-4">
-                            <h1 class="text-4xl md:text-6xl font-black text-white mb-2"
-                                style="lign-space:3px; ; letter-spacing: 1.2rem; font-size: 4rem; font-weight: 900;">
-                                Find Your <br />Perfect <br/> Match
+                        <div class="w-full grid gap-4 align-center justify-start">
+                            <h1 class="text-4xl md:text-6xl font-black text-white leading-none"
+                                style="letter-spacing: 1.2rem; font-size: 4rem; font-weight: 900;">
+                                Find Your <br />Perfect <br /> Match
                             </h1>
-                            {{-- <p class="text-base md:text-lg text-gray-300" style="letter-spacing: 2px">
-                            </p> --}}
-                            <p class="text-base md:text-lg text-gray-300 mb-8" style="letter-spacing: 2px">
+                            <p class="text-base md:text-lg text-gray-300 " style="letter-spacing: 2px">
                                 Ignite Your Imagination <br>
                                 HouseLink - Where Vision Meets Reality.
                             </p>
-                            <button type="button"
-                                class="py-2 px-4 md:py-2.5 md:px-5 text-xs md:text-sm font-medium text-white focus:outline-none rounded-lg border border-white hover:border-green-700 hover:bg-green-700 hover:text-white focus:z-10 focus:ring-2"
-                                style="letter-spacing: 2px">
-                                Get Started
-                            </button>
+                            <div class="">
+                                <button type="button"
+                                    class="flex py-2 px-4 md:py-2.5 md:px-5 text-xs md:text-sm font-medium text-white focus:outline-none rounded-lg border border-white hover:border-green-700 hover:bg-green-700 hover:text-white focus:z-10 focus:ring-2"
+                                    style="letter-spacing: 2px">
+                                    Get Started
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex flex-wrap p-4 md:p-16 items-center justify-center md:justify-end">
-                        <img src="{{ asset('./images/mar.png') }}" alt="" class="max-w-full md:max-w-md">
+                    <div class="w-1/2 hidden md:flex">
+                        <img src="{{ asset('./images/mar.png') }}" alt="" class="w-full">
                     </div>
                 </div>
             </div>
@@ -245,7 +292,7 @@
 
         <!-- Filter section -->
         <section class="absolute w-full  flex items-center justify-center px-4" style=" bottom: -8%">
-            <div class=" py-6 px-8 border lg:flex rounded-lg shadow-lg hidden :max-w-screen-xl  mx-auto  backdrop-blur-md bg-white/30"
+            <div class=" py-6 px-8 border lg:flex rounded-lg shadow-lg hidden max-w-screen-xl  mx-auto  backdrop-blur-md bg-white/30"
                 style=" fill: linear-gradient(154deg, rgba(255, 255, 255, 0.836) 0%, rgba(255, 255, 255, 0.87) 100%);filter: drop-shadow(0px 0px 50px rgba(255, 255, 255, 0.1)); backdrop-filter: blur(30px);">
                 <!-- Action Type -->
                 <div class="mr-3">
@@ -1392,7 +1439,8 @@
 
                                 <!-- Item 1 -->
                                 <div class="hidden duration-700 ease-in-out h-64" data-carousel-item>
-                                    <img src="/images/1.jpg" class="absolute block h-64 object-cover" alt="">
+                                    <img src="/images/1.jpg" class="absolute block h-64 object-cover"
+                                        alt="">
                                 </div>
                                 <!-- Item 2 -->
                                 <div class="hidden duration-700 ease-in-out h-64" data-carousel-item>

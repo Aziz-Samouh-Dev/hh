@@ -22,6 +22,16 @@ class RegisteredUserController extends Controller
     {
         return view('auth.register');
     }
+    
+    public function create_seller(): View
+    {
+        return view('auth.seller');
+    }
+
+    public function create_buyer(): View
+    {
+        return view('auth.buyer');
+    }
 
     /**
      * Handle an incoming registration request.

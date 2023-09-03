@@ -21,7 +21,7 @@
         <div class="content-center">
             <label for="email" :value="__('Email')" class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
             <input
-                class="w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                class="w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-green-500"
                 id="email" type="email" name="email" :value="old('email')" required autofocus />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>

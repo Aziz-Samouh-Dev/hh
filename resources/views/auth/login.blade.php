@@ -16,7 +16,7 @@
                 <label for="email" :value="__('Email')"
                     class="ml-3 text-sm font-bold text-gray-700 tracking-wide">Email</label>
                 <input
-                    class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-indigo-500"
+                    class=" w-full text-base px-4 py-2 border-b border-gray-300 focus:outline-none rounded-2xl focus:border-green-500"
                     id="email" type="email" name="email" :value="old('email')" required autofocus
                     autocomplete="username" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -28,7 +28,7 @@
                     Password
                 </label>
                 <input
-                    class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-indigo-500"
+                    class="w-full content-center text-base px-4 py-2 border-b rounded-2xl border-gray-300 focus:outline-none focus:border-green-500"
                     type="password" name="password" id="password" required autocomplete="current-password">
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="text-sm">
                     @if (Route::has('password.request'))
-                        <a class="text-indigo-400 hover:text-blue-500"
+                        <a class="text-green-400 hover:text-blue-500"
                             href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
@@ -59,7 +59,7 @@
             <p class="flex flex-col items-center justify-center mt-10 text-center text-md text-gray-500">
                 <span>Don't have an account?</span>
                 <a href="{{ route('register') }}"
-                    class="text-indigo-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
+                    class="text-green-400 hover:text-blue-500 no-underline hover:underline cursor-pointer transition ease-in duration-300">Sign
                     up
                 </a>
             </p>

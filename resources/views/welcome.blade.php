@@ -265,7 +265,7 @@
             <div class="w-full flex items-center justify-center bg-gray-900/60">
                 <div class="max-w-screen-xl flex items-center justify-between overflow-hidden">
                     <div class="flex flex-wrap p-4">
-                        <div class="w-full grid gap-4 align-center justify-start">
+                        <div class="w-full grid gap-4 align-center justify-center">
                             <h1 class="text-4xl md:text-6xl font-black text-white leading-none"
                                 style="letter-spacing: 1.2rem; font-size: 4rem; font-weight: 900;">
                                 Find Your <br />Perfect <br /> Match

@@ -15,11 +15,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js" defer></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-
     
     <!-- Font awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -166,7 +165,7 @@
                 style="background-image: url({{ asset('kara-eads-L7EwHkq1B2s-unsplash.jpg') }});">
                 <div class="absolute bg-gradient-to-b from-green-800 to-green-600 opacity-75 inset-0 z-0"></div>
                 <div class="w-full grid items-center justify-center  max-w-md z-10">
-                    <img src="{{ asset('logoW.png') }}" alt="">
+                    <img src="{{ asset('logoW.svg') }}" alt="">
 
                 </div>
                 <!---remove custom style-->
@@ -185,7 +184,6 @@
             </div>
             <div
                 class="md:flex md:items-center md:justify-center w-full sm:w-auto md:h-screen w-2/5 xl:w-2/5 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none bg-white">
-
                 {{ $slot }}
             </div>
         </div>

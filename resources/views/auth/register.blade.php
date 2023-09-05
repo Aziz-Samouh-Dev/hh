@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('register.buyer') }}"
                     class="inline-flex items-center justify-start w-full p-2 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-600">
                     <div class="grid gap-3 ">
                         <div class="grid w-full text-lg font-semibold">Buyer</div>
